@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# usage Rscript separate_by_cross.R cybrid_transformed.csv
+# usage: Rscript separate_by_cross.R cybrid_transformed.csv
 # Use this to separate the master transformed data into individual csv files based on crosses
 # output: [cross].csv files into working directory
 # must have already run cybrid_transformed.R
