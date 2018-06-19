@@ -1,11 +1,18 @@
 # cybrid_transformed.R
 Usage:
+
 Download the cybrid spreadsheet from google drive in csv format
+
 run in terminal: Rscript cybrid_transformed.R [downloaded_spreadsheet.csv]
+
 output: "cybrid_transformed.csv" to your current working directory
+
 output columns explained:
+
 mito - mitochondrial line
+
 nuc - nuclear line
+
 cross - cross ID ex. BB is a BR x BR cross
 fid - family ID (numbers are reused for different mito x nuc crosses)
 gen - generation (BC = backcross)
