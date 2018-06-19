@@ -1,4 +1,4 @@
-# cybrid_transform.R
+# cybrid_transformed.R
 Usage:
 Download the cybrid spreadsheet from google drive in csv format
 run in terminal: Rscript cybrid_transformed.R [downloaded_spreadsheet.csv]
@@ -48,8 +48,6 @@ Execution halted
 
 In the master spreadsheet BB_6_R1E1 is duplicated so it cannot determine which data to use
 
- 
-
 Error 2:
 
 Error in `$<-.data.frame`(`*tmp*`, "parent.start", value = integer(0)) : 
@@ -68,3 +66,5 @@ Execution halted
 
 In the master spreadsheet BB_6_R4E1 is missing 
 
+# separate_by_cross.R 
+Use after cybrid_transformed.R
