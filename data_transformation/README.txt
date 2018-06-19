@@ -2,6 +2,28 @@ Usage:
 Download the cybrid spreadsheet from google drive in csv format
 run in terminal: Rscript cybrid_transformed.R [downloaded_spreadsheet.csv]
 output: "cybrid_transformed.csv" to your current working directory
+output columns explained:
+mito - mitochondrial line
+nuc - nuclear line
+cross - cross ID ex. BB is a BR x BR cross
+fid - family ID (numbers are reused for different mito x nuc crosses)
+gen - generation (BC = backcross)
+rid - replicate ID, the unique ID for each individual well
+start.date - start date of well
+nauplii - date nauplii first appeared
+FE.removed - date the FE was removed or found dead
+f.num - number of females before one was finally productive
+fe.dead - was the FE found dead or manually removed (n = manually removed, y = found dead)
+status - is the line extinct or extant (0 = extant, 2 = extinct)
+full.ID - concatenated ID including cross_fid_rid
+offspringID - the last part of the full ID (ex. full.ID = BB_1_R1E1E1, then offspringID = E1)
+parentID - the beginning part of the full ID (ex. full.ID = BB_1_R1E1E1, then parentID = BB_1_R1E1)
+parent.start - start date for the parental cross
+start.gen.time - generation time calculated based on subsequent cross start dates
+parent.naup - date nauplii appeared in parental cross
+naup.gen.time - generation time calculated based on subseqent cross nauplii dates
+productivity.time - number of days between the start of the cross and when nauplii appeared
+
 
 The full IDs will be printed to the terminal by default but you can comment this out in the loops 
 If there is an error it is likely during one of the loops where generation time is being calculated due to human input error in the google drive spreadsheet
