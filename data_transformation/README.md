@@ -27,16 +27,14 @@ output columns explained:
 - naup.gen.time - generation time calculated based on subseqent cross nauplii dates
 - productivity.time - number of days between the start of the cross and when nauplii appeared
 
-
 The full IDs will be printed to the terminal by default but you can comment this out in the loops 
-If there is an error it is likely during one of the loops where generation time is being calculated due to human input error in the google drive spreadsheet
 
+## Errors
 Error 1:
-
-Error in `$<-.data.frame`(`*tmp*`, "parent.start", value = c(6L, 13L)) : 
+'Error in `$<-.data.frame`(`*tmp*`, "parent.start", value = c(6L, 13L)) : 
   replacement has 2 rows, data has 1
 Calls: $<- -> $<-.data.frame
-Execution halted
+Execution halted'
 
 This means that in the full ID column there are two identical values
 The full ID that is printed before the error halts the script is the offspring of the well with identical values
