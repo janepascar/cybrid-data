@@ -37,36 +37,43 @@ Error in $<-.data.frame(*tmp*, "parent.start", value = c(6L, 13L)) :
 Calls: $<- -> $<-.data.frame
 Execution halted
 ```
-
 This means that in the full ID column there are two identical values
 The full ID that is printed before the error halts the script is the offspring of the well with identical values
 In other words, to find the duplicated ID remove the replicate ID from the problematic full ID
-ex. 
+ex.  
+```
 [1] "BB_6_R1E1E1"
 Error in `$<-.data.frame`(`*tmp*`, "parent.start", value = c(6L, 13L)) : 
   replacement has 2 rows, data has 1
 Calls: $<- -> $<-.data.frame
 Execution halted
-
+```
 In the master spreadsheet BB_6_R1E1 is duplicated so it cannot determine which data to use
 
 Error 2:
-
+```
 Error in `$<-.data.frame`(`*tmp*`, "parent.start", value = integer(0)) : 
   replacement has 0 rows, data has 1
 Calls: $<- -> $<-.data.frame
 Execution halted
-
+```
 This means that there is a full ID without a parent ID
 The full ID that is printed is the offspring that is missing a parent
 ex. 
+```
 [1] "BB_6_R4E1E1"
 Error in `$<-.data.frame`(`*tmp*`, "parent.start", value = integer(0)) : 
   replacement has 0 rows, data has 1
 Calls: $<- -> $<-.data.frame
 Execution halted
-
+```
 In the master spreadsheet BB_6_R4E1 is missing 
 
 # separate_by_cross.R 
-Use after cybrid_transformed.R
+Use to create .csv files each containing the data for one cross.
+
+Must have already run cybrid_transformed.R
+
+run in terminal: Rscript separate_by_cross.R cybrid_transformed.csv
+
+output: ex. "JB.csv" to your current working directory
