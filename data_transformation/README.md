@@ -32,8 +32,11 @@ The full IDs will be printed to the terminal by default but you can comment this
 ### Errors
 Error 1:
 `Error in $<-.data.frame(*tmp*, "parent.start", value = c(6L, 13L)) : `
+
   `replacement has 2 rows, data has 1`
+
 `Calls: $<- -> $<-.data.frame`
+
 `Execution halted`
 
 This means that in the full ID column there are two identical values
