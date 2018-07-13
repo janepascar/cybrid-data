@@ -1,3 +1,6 @@
+# plots generation time based on start dates and nauplii dates
+# plots productivity time
+
 library(ggplot2)
 library(dplyr)
 library(ggsignif)
@@ -16,7 +19,7 @@ males <- unique(Cy$nuc)
 females <- unique(Cy$mito)
 
 # Outer loop : switches between nuclear lines
-# Inner loops : switches between mito lines & which date is used to calcualte gen time
+# Inner loops : switches between mito lines & which date is used to calculate generation time
 for (m in males) {
   # first loop plots start.gen.time
   for (f in females) {
@@ -84,6 +87,7 @@ k <- ggplot(Cy, aes(gen.num, start.gen.time, col = mito)) +
 		facet_wrap(~nuc) + 
 		xlab("Generations after F1") + 
 		ylab("Start to Start")
+#print(k)
 l <- ggplot(Cy, aes(gen.num, naup.gen.time, col = mito)) + 
 		geom_point() + 
 		geom_smooth(method = "loess", se = FALSE) +
@@ -91,6 +95,7 @@ l <- ggplot(Cy, aes(gen.num, naup.gen.time, col = mito)) +
 		facet_wrap(~ nuc) + 
 		xlab("Generations after F1") + 
 		ylab("Nauplii to nauplii")
+#print(l)
 m <- ggplot(Cy, aes(gen.num, productivity.time, col = mito)) + 
 		geom_point() + 
 		geom_smooth(method = "loess", se = FALSE) +
@@ -98,5 +103,4 @@ m <- ggplot(Cy, aes(gen.num, productivity.time, col = mito)) +
 		facet_wrap(~ nuc) + 
 		xlab("Generations after F1") + 
 		ylab("Start to nauplii")
-
-
+#print(m)
