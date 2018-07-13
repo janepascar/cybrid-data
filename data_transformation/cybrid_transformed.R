@@ -1,5 +1,11 @@
 #!/usr/bin/env Rscript
 # usage: Rscript cybrid_transformed.R [.csv of cybrid data from google drive]
+# will save a file named cybrid_transformed.csv to your current working directory
+# errors will halt the script
+# error 1: replacement has 2 rows, data has 1
+	# in the spreadsheet there is a duplicated full ID so it does not know which one to pull dates from; one must be deleted or corrected
+# error 2: replacement has 0 rows, data has 1
+	# in the spreadsheet there is a full ID that does not have a corresponding parental ID; either the offspring ID is incorrect or the parental data is missing
 
 require(stringr); require(tidyr); require(dplyr)
 args = commandArgs(trailingOnly=TRUE)
@@ -92,6 +98,5 @@ cybrid_master_calc$start.date <- as.Date(cybrid_master_calc$start.date)
 cybrid_master_calc$nauplii <- as.Date(cybrid_master_calc$nauplii)
 
 cybrid_transformed$productivity.time <- difftime(as.Date(cybrid_transformed$nauplii, format="%Y-%m-%d"), as.Date(cybrid_transformed$start.date, format="%Y-%m-%d"), units="days")
-
 write.csv(cybrid_transformed, file = "cybrid_transformed.csv", quote = F, row.names = F)
 print("file saved")
