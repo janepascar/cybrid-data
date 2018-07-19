@@ -10,4 +10,4 @@ dat$success[is.na(dat$success)] <- 0
 dat$well_extinct <- ifelse(dat$success >0, "FALSE", "TRUE")
 # replace BC12 extintion with false
 dat$well_extinct <- ifelse(dat$gen.num == 12, "FALSE", dat$well_extinct)
-write.csv(cybrid_transformed, file = "cybrid_transformed.csv", quote = F, row.names = F)
+write.csv(dat, file = "cybrid_transformed.csv", quote = F, row.names = F)
