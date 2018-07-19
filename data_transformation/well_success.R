@@ -6,5 +6,8 @@ freq <- plyr::count(dat, vars = "parentID")
 dat$success <- freq$freq[match(dat$full.ID, freq$parentID)]
 # change NA to 0
 dat$success[is.na(dat$success)] <- 0
-# if a well has not produced any successful offspring it has presumably gone extinct (TRUE)
+# no successful offspring: well went extinct (TRUE)
 dat$well_extinct <- ifelse(dat$success >0, "FALSE", "TRUE")
+# replace BC12 extintion with false
+dat$well_extinct <- ifelse(dat$gen.num == 12, "FALSE", dat$well_extinct)
+write.csv(cybrid_transformed, file = "cybrid_transformed.csv", quote = F, row.names = F)
