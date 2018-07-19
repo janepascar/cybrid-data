@@ -72,7 +72,7 @@ for (i in 1:nrow(dat2[dat2$parentID!="",])){
 print("done with generation based on nauplii time.............................................")
 
 # columns missing in dat2 parent.start, start.gen.time, parent.naup, naup.gen.time
-# filter for jsut F1 rows and add these columns to the data frame with NA data
+# filter for just F1 rows and add these columns to the data frame with NA data
 f1 <- dat2 %>%
   filter(gen == "F1")
 f1$parentID <- rep(NA, length(f1$parentID))
