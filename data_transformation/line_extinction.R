@@ -11,7 +11,7 @@ for (f in fam) {
 }
 # edit and fill in based on what families are alive/dead
 	# example: dead.lines <- list(BB3, CD4, LB6)
-	#		   alive.lines <- list(JB7, FB2)
+	#          alive.lines <- list(JB7, FB2)
 dead.lines <- list()
 alive.lines <- list()
 # merge into data frames containing all alive or dead lines
